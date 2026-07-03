@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "79545172851",
+    "project_id": "mourassala-c16c3",
+    "storage_bucket": "mourassala-c16c3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79545172851:android:377892c1cfefd72b48bb06",
+        "android_client_info": {
+          "package_name": "Com.morassala.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAbAevLpA744KB5IkctFGFIj4rMOUsFds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79545172851:android:b646773093a9f90848bb06",
+        "android_client_info": {
+          "package_name": "com.aistudio.murasalah.cxbwz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAbAevLpA744KB5IkctFGFIj4rMOUsFds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
