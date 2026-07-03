@@ -1,0 +1,57 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main
+      - build-apk
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          api-levels: 36
+          build-tools-version: 36.0.0
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: debug-apk
+          path: app/build/outputs/apk/debug/
+
+      - name: Build Release APK
+        run: ./gradlew assembleRelease
+        continue-on-error: true
+
+      - name: Upload Release APK
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: release-apk
+          path: app/build/outputs/apk/release/
+          
+      - name: Build Success
+        if: success()
+        run: echo "✅ APK Build Completed Successfully!"
